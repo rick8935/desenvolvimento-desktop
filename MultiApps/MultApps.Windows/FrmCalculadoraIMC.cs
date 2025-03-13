@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MultApps.Windows
 {
@@ -47,39 +48,39 @@ namespace MultApps.Windows
 
             //FAZ O PROCESSAMENTO
             var imc = peso / (altura * altura);
-            var textoBase = $@"Meu IMC: {imc:N2} é";
+            var textoBase = $@"Meu IMC: {imc:N2}. ";
 
             if (chkAdulto.Checked == true && chkMasculino.Checked == true)
             {
                 if (imc <= 18.5)
                 {
                     lblResultadoImc.Text = $@"{textoBase} abaixo do normal";
-                    picBoxImc.Load(ManipuladorDeImagem("abaixo do normal"));
+                    picBoxImc.Load(imcImagem.MasculinoAbaixoDoNormal);
                 }
                 else if (imc < 24.9)
                 {
                     lblResultadoImc.Text = $@"{textoBase} normal";
-                    picBoxImc.Load(ManipuladorDeImagem("normal"));
+                    picBoxImc.Load(imcImagem.MasculinoNormal);
                 }
                 else if (imc < 29.9)
                 {
                     lblResultadoImc.Text = $@"{textoBase} sobrepeso";
-                    picBoxImc.Load(ManipuladorDeImagem("sobrepeso"));
+                    picBoxImc.Load(imcImagem.MasculinoSobrepeso);
                 }
                 else if (imc < 34.9)
                 {
                     lblResultadoImc.Text = $@"{textoBase} obesidade grau 1";
-                    picBoxImc.Load(ManipuladorDeImagem("obesidade grau 1"));
+                    picBoxImc.Load(imcImagem.MasculinoObesidade1);
                 }
                 else if (imc < 39.9)
                 {
                     lblResultadoImc.Text = $@"{textoBase} obesidade grau 2";
-                    picBoxImc.Load(ManipuladorDeImagem());
+                    picBoxImc.Load(imcImagem.MasculinoObesidade2);
                 }
                 else
                 {
                     lblResultadoImc.Text = $@"{textoBase} obesidade grau 3";
-                    picBoxImc.Load(ManipuladorDeImagem());
+                    picBoxImc.Load(imcImagem.MasculinoObesidade3);
                 }
             }
             else if (chkAdulto.Checked == true && chkFeminino.Checked == true)
@@ -87,38 +88,58 @@ namespace MultApps.Windows
                 if (imc <= 18.5)
                 {
                     lblResultadoImc.Text = $@"{textoBase} abaixo do normal";
-                    picBoxImc.Load("https://abeso.org.br/wp-content/uploads/2019/12/imc_m_06.png");
+                    picBoxImc.Load(imcImagem.FemininoAbaixoDoNormal);
                 }
                 else if (imc < 24.9)
                 {
                     lblResultadoImc.Text = $@"{textoBase} normal";
-                    picBoxImc.Load("https://abeso.org.br/wp-content/uploads/2019/12/imc_m_05.png");
+                    picBoxImc.Load(imcImagem.FemininoNormal);
                 }
                 else if (imc < 29.9)
                 {
                     lblResultadoImc.Text = $@"{textoBase} sobrepeso";
-                    picBoxImc.Load("https://abeso.org.br/wp-content/uploads/2019/12/imc_m_04.png");
+                    picBoxImc.Load(imcImagem.FemininoSobrepeso);
                 }
                 else if (imc < 34.9)
                 {
                     lblResultadoImc.Text = $@"{textoBase} obesidade grau 1";
-                    picBoxImc.Load("https://abeso.org.br/wp-content/uploads/2019/12/imc_m_03.png");
+                    picBoxImc.Load(imcImagem.FemininoObesidade1);
                 }
                 else if (imc < 39.9)
                 {
                     lblResultadoImc.Text = $@"{textoBase} obesidade grau 2";
-                    picBoxImc.Load("https://abeso.org.br/wp-content/uploads/2019/12/imc_m_02.png");
+                    picBoxImc.Load(imcImagem.FemininoObesidade2);
                 }
                 else
                 {
                     lblResultadoImc.Text = $@"{textoBase} obesidade grau 3";
-                    picBoxImc.Load("https://abeso.org.br/wp-content/uploads/2019/12/imc_m_01.png");
+                    picBoxImc.Load(imcImagem.FemininoObesidade3);
                 }
             }
-            else if (chkCrianca.Checked == true && chkMasculino.Checked == true)
+            else if (chkCrianca.Checked == true)
             {
-                
+                if (imc <= 18.5)
+                {
+                    lblResultadoImc.Text = $@"{textoBase} abaixo do normal";
+                    picBoxImc.Load(imcImagem.CriancaAbaixoDoNormal);
+                }
+                else if (imc < 24.9)
+                {
+                    lblResultadoImc.Text = $@"{textoBase} normal";
+                    picBoxImc.Load(imcImagem.CriancaNormal);
+                }
+                else if (imc < 29.9)
+                {
+                    lblResultadoImc.Text = $@"{textoBase} sobrepeso";
+                    picBoxImc.Load(imcImagem.CriancaSobrepeso);
+                }
+                else
+                {
+                    lblResultadoImc.Text = $@"{textoBase} obesidade";
+                    picBoxImc.Load(imcImagem.CriancaObesidade);
+                }
             }
+
         }
 
         private void chkMasculino_CheckedChanged(object sender, EventArgs e)
@@ -135,24 +156,5 @@ namespace MultApps.Windows
             chkMasculino.Checked = false;
         }
 
-        private string ManipuladorDeImagem(string grau)
-        {
-            switch (grau)
-            {
-                case: "abaixo do normal":
-                    return "https://abeso.org.br/wp-content/uploads/2019/12/imc_06.png";
-                case: "normal"
-                    return "https://abeso.org.br/wp-content/uploads/2019/12/imc_05.png";
-                case: "sobrepeso"
-                    return "https://abeso.org.br/wp-content/uploads/2019/12/imc_04.png";
-                case: "obesidade grau 1"
-                    return "https://abeso.org.br/wp-content/uploads/2019/12/imc_03.png";
-                case: "obesidade grau 2"
-                    return "https://abeso.org.br/wp-content/uploads/2019/12/imc_02.png";
-                case: "obesidade grau 3"
-                    return "https://abeso.org.br/wp-content/uploads/2019/12/imc_01.png";
-
-            }
-        }
     }
 }
