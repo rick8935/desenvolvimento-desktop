@@ -70,6 +70,12 @@
     <Compile Include="FrmCarteirinha.Designer.cs">
       <DependentUpon>FrmCarteirinha.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLojaAcai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLojaAcai.Designer.cs">
+      <DependentUpon>FrmLojaAcai.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImcImagem.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -88,6 +94,9 @@
     <EmbeddedResource Include="FrmCalculadoraIMC.resx">
       <DependentUpon>FrmCalculadoraIMC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLojaAcai.resx">
+      <DependentUpon>FrmLojaAcai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +108,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -112,6 +122,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\61eRaa65D6L._AC_UF1000,1000_QL80_.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\071bdfb90c1c5bc5e99966178d95ce90.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leite-condensado-caseiro-24-05-1024x677.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\morango-1519823853148_v2_4x3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bananas_%28Alabama_Extension%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\granola-1510338231101_v2_450x450.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
