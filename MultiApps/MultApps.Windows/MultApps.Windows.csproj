@@ -133,16 +133,16 @@
     <None Include="Resources\071bdfb90c1c5bc5e99966178d95ce90.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\leite-condensado-caseiro-24-05-1024x677.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\morango-1519823853148_v2_4x3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Bananas_%28Alabama_Extension%29.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\granola-1510338231101_v2_450x450.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leite-condensado-caseiro-24-05-1024x677.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\morango-1519823853148_v2_4x3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

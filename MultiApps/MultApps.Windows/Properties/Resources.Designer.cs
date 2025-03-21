@@ -73,9 +73,29 @@ namespace MultApps.Windows.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _071bdfb90c1c5bc5e99966178d95ce901 {
+            get {
+                object obj = ResourceManager.GetObject("071bdfb90c1c5bc5e99966178d95ce901", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3 {
             get {
                 object obj = ResourceManager.GetObject("3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _31 {
+            get {
+                object obj = ResourceManager.GetObject("31", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +123,29 @@ namespace MultApps.Windows.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _61eRaa65D6L2 {
+            get {
+                object obj = ResourceManager.GetObject("61eRaa65D6L2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bananas__Alabama_Extension_ {
             get {
                 object obj = ResourceManager.GetObject("Bananas_(Alabama_Extension)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bananas__Alabama_Extension_1 {
+            get {
+                object obj = ResourceManager.GetObject("Bananas_(Alabama_Extension)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +163,16 @@ namespace MultApps.Windows.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap granola_1510338231101_v2_450x4501 {
+            get {
+                object obj = ResourceManager.GetObject("granola-1510338231101_v2_450x4501", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap leite_condensado_caseiro_24_05_1024x677 {
             get {
                 object obj = ResourceManager.GetObject("leite-condensado-caseiro-24-05-1024x677", resourceCulture);
@@ -133,9 +183,29 @@ namespace MultApps.Windows.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap leite_condensado_caseiro_24_05_1024x6771 {
+            get {
+                object obj = ResourceManager.GetObject("leite-condensado-caseiro-24-05-1024x6771", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap morango_1519823853148_v2_4x3 {
             get {
                 object obj = ResourceManager.GetObject("morango-1519823853148_v2_4x3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap morango_1519823853148_v2_4x31 {
+            get {
+                object obj = ResourceManager.GetObject("morango-1519823853148_v2_4x31", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

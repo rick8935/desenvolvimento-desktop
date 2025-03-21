@@ -130,6 +130,9 @@
   <data name="leite-condensado-caseiro-24-05-1024x677" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\leite-condensado-caseiro-24-05-1024x677.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="granola-1510338231101_v2_450x450" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\granola-1510338231101_v2_450x450.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="61eRaa65D6L1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\61eRaa65D6L._AC_UF1000,1000_QL80_.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,7 +142,25 @@
   <data name="071bdfb90c1c5bc5e99966178d95ce90" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\071bdfb90c1c5bc5e99966178d95ce90.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="granola-1510338231101_v2_450x450" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="61eRaa65D6L2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\61eRaa65D6L._AC_UF1000,1000_QL80_.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="071bdfb90c1c5bc5e99966178d95ce901" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\071bdfb90c1c5bc5e99966178d95ce90.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bananas_(Alabama_Extension)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bananas_(Alabama_Extension).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="granola-1510338231101_v2_450x4501" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\granola-1510338231101_v2_450x450.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leite-condensado-caseiro-24-05-1024x6771" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\leite-condensado-caseiro-24-05-1024x677.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="morango-1519823853148_v2_4x31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\morango-1519823853148_v2_4x3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

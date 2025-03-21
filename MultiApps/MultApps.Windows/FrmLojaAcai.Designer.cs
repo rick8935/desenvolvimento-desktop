@@ -31,13 +31,13 @@ namespace MultApps.Windows
         {
             this.lblTamanho = new System.Windows.Forms.Label();
             this.lblAcaiPequeno = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSelecionar1 = new System.Windows.Forms.Button();
             this.lblPrecoPequeno = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSelecionar2 = new System.Windows.Forms.Button();
             this.lblAcaiMedio = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSelecionar3 = new System.Windows.Forms.Button();
             this.lblAcaiGrande = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSelecionar4 = new System.Windows.Forms.Button();
             this.lblAcaiFamilia = new System.Windows.Forms.Label();
             this.lblPrecoMedio = new System.Windows.Forms.Label();
             this.lblPrecoGrande = new System.Windows.Forms.Label();
@@ -56,27 +56,31 @@ namespace MultApps.Windows
             this.lblPrecoGranola = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.picBoxGranola = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.picBoxBanana = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.picBoxMorango = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.button16 = new System.Windows.Forms.Button();
+            this.picBoxLeiteCondensado = new System.Windows.Forms.PictureBox();
+            this.btnRemoverComplemento1 = new System.Windows.Forms.Button();
+            this.lblQuantidadeGranola = new System.Windows.Forms.Label();
+            this.btnAdicionarComplemento1 = new System.Windows.Forms.Button();
+            this.btnAdicionarComplemento2 = new System.Windows.Forms.Button();
+            this.lblQuantidadeBanana = new System.Windows.Forms.Label();
+            this.btnRemoverComplemento2 = new System.Windows.Forms.Button();
+            this.btnAdicionarComplemento3 = new System.Windows.Forms.Button();
+            this.lblQuantidadeMorango = new System.Windows.Forms.Label();
+            this.btnRemoverComplemento3 = new System.Windows.Forms.Button();
+            this.btnAdicionarComplemento4 = new System.Windows.Forms.Button();
+            this.lblQuantidadeLeiteCondensado = new System.Windows.Forms.Label();
+            this.btnRemoverComplemento4 = new System.Windows.Forms.Button();
+            this.btnAdicionarComplemento6 = new System.Windows.Forms.Button();
+            this.lblQuantidadeMM = new System.Windows.Forms.Label();
+            this.btnRemoverComplemento6 = new System.Windows.Forms.Button();
+            this.btnAdicionarComplemento5 = new System.Windows.Forms.Button();
+            this.lblQuantidadeLeiteNinho = new System.Windows.Forms.Label();
+            this.btnRemoverComplemento5 = new System.Windows.Forms.Button();
             this.lblPrecoMM = new System.Windows.Forms.Label();
             this.lblPrecoLeiteNinho = new System.Windows.Forms.Label();
             this.lblMM = new System.Windows.Forms.Label();
@@ -84,8 +88,6 @@ namespace MultApps.Windows
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.lblPedido = new System.Windows.Forms.Label();
-            this.lblItens = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblPrecoTotal = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -95,24 +97,23 @@ namespace MultApps.Windows
             this.panel15 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.picBoxGranola = new System.Windows.Forms.PictureBox();
-            this.picBoxBanana = new System.Windows.Forms.PictureBox();
-            this.picBoxMorango = new System.Windows.Forms.PictureBox();
-            this.picBoxLeiteCondensado = new System.Windows.Forms.PictureBox();
             this.picBoxFamilia = new System.Windows.Forms.PictureBox();
             this.picBoxGrande = new System.Windows.Forms.PictureBox();
             this.picBoxMedio = new System.Windows.Forms.PictureBox();
             this.picBoxPequeno = new System.Windows.Forms.PictureBox();
+            this.listBoxPedidos = new System.Windows.Forms.ListBox();
+            this.btnRemover = new System.Windows.Forms.Button();
+            this.listBoxPrecoTotal = new System.Windows.Forms.ListBox();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxGranola)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxBanana)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxMorango)).BeginInit();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLeiteCondensado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxGranola)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxBanana)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxMorango)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxLeiteCondensado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFamilia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGrande)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMedio)).BeginInit();
@@ -139,17 +140,18 @@ namespace MultApps.Windows
             this.lblAcaiPequeno.TabIndex = 2;
             this.lblAcaiPequeno.Text = "Açaí pequeno (300ml)";
             // 
-            // button1
+            // btnSelecionar1
             // 
-            this.button1.BackColor = System.Drawing.Color.Purple;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(36, 304);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Selecionar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSelecionar1.BackColor = System.Drawing.Color.Purple;
+            this.btnSelecionar1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecionar1.ForeColor = System.Drawing.Color.White;
+            this.btnSelecionar1.Location = new System.Drawing.Point(36, 304);
+            this.btnSelecionar1.Name = "btnSelecionar1";
+            this.btnSelecionar1.Size = new System.Drawing.Size(179, 30);
+            this.btnSelecionar1.TabIndex = 3;
+            this.btnSelecionar1.Text = "Selecionar";
+            this.btnSelecionar1.UseVisualStyleBackColor = false;
+            this.btnSelecionar1.Click += new System.EventHandler(this.btnSelecionar1_Click);
             // 
             // lblPrecoPequeno
             // 
@@ -160,17 +162,18 @@ namespace MultApps.Windows
             this.lblPrecoPequeno.TabIndex = 4;
             this.lblPrecoPequeno.Text = "R$15.00";
             // 
-            // button2
+            // btnSelecionar2
             // 
-            this.button2.BackColor = System.Drawing.Color.Purple;
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(250, 304);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(179, 30);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Selecionar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSelecionar2.BackColor = System.Drawing.Color.Purple;
+            this.btnSelecionar2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecionar2.ForeColor = System.Drawing.Color.White;
+            this.btnSelecionar2.Location = new System.Drawing.Point(250, 304);
+            this.btnSelecionar2.Name = "btnSelecionar2";
+            this.btnSelecionar2.Size = new System.Drawing.Size(179, 30);
+            this.btnSelecionar2.TabIndex = 7;
+            this.btnSelecionar2.Text = "Selecionar";
+            this.btnSelecionar2.UseVisualStyleBackColor = false;
+            this.btnSelecionar2.Click += new System.EventHandler(this.btnSelecionar2_Click);
             // 
             // lblAcaiMedio
             // 
@@ -182,17 +185,18 @@ namespace MultApps.Windows
             this.lblAcaiMedio.TabIndex = 6;
             this.lblAcaiMedio.Text = "Açaí médio (500ml)";
             // 
-            // button3
+            // btnSelecionar3
             // 
-            this.button3.BackColor = System.Drawing.Color.Purple;
-            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(462, 304);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(179, 30);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Selecionar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnSelecionar3.BackColor = System.Drawing.Color.Purple;
+            this.btnSelecionar3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecionar3.ForeColor = System.Drawing.Color.White;
+            this.btnSelecionar3.Location = new System.Drawing.Point(462, 304);
+            this.btnSelecionar3.Name = "btnSelecionar3";
+            this.btnSelecionar3.Size = new System.Drawing.Size(179, 30);
+            this.btnSelecionar3.TabIndex = 10;
+            this.btnSelecionar3.Text = "Selecionar";
+            this.btnSelecionar3.UseVisualStyleBackColor = false;
+            this.btnSelecionar3.Click += new System.EventHandler(this.btnSelecionar3_Click);
             // 
             // lblAcaiGrande
             // 
@@ -204,17 +208,18 @@ namespace MultApps.Windows
             this.lblAcaiGrande.TabIndex = 9;
             this.lblAcaiGrande.Text = "Açaí grande (700ml)";
             // 
-            // button4
+            // btnSelecionar4
             // 
-            this.button4.BackColor = System.Drawing.Color.Purple;
-            this.button4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(671, 304);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(179, 30);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Selecionar";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnSelecionar4.BackColor = System.Drawing.Color.Purple;
+            this.btnSelecionar4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecionar4.ForeColor = System.Drawing.Color.White;
+            this.btnSelecionar4.Location = new System.Drawing.Point(671, 304);
+            this.btnSelecionar4.Name = "btnSelecionar4";
+            this.btnSelecionar4.Size = new System.Drawing.Size(179, 30);
+            this.btnSelecionar4.TabIndex = 13;
+            this.btnSelecionar4.Text = "Selecionar";
+            this.btnSelecionar4.UseVisualStyleBackColor = false;
+            this.btnSelecionar4.Click += new System.EventHandler(this.btnSelecionar4_Click);
             // 
             // lblAcaiFamilia
             // 
@@ -380,6 +385,16 @@ namespace MultApps.Windows
             this.panel5.Size = new System.Drawing.Size(171, 168);
             this.panel5.TabIndex = 33;
             // 
+            // picBoxGranola
+            // 
+            this.picBoxGranola.Image = global::MultApps.Windows.Properties.Resources.granola_1510338231101_v2_450x4501;
+            this.picBoxGranola.Location = new System.Drawing.Point(15, 16);
+            this.picBoxGranola.Name = "picBoxGranola";
+            this.picBoxGranola.Size = new System.Drawing.Size(138, 134);
+            this.picBoxGranola.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxGranola.TabIndex = 21;
+            this.picBoxGranola.TabStop = false;
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -388,6 +403,17 @@ namespace MultApps.Windows
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(171, 168);
             this.panel6.TabIndex = 34;
+            // 
+            // picBoxBanana
+            // 
+            this.picBoxBanana.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.picBoxBanana.Image = global::MultApps.Windows.Properties.Resources.Bananas__Alabama_Extension_;
+            this.picBoxBanana.Location = new System.Drawing.Point(15, 16);
+            this.picBoxBanana.Name = "picBoxBanana";
+            this.picBoxBanana.Size = new System.Drawing.Size(138, 134);
+            this.picBoxBanana.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxBanana.TabIndex = 24;
+            this.picBoxBanana.TabStop = false;
             // 
             // panel7
             // 
@@ -398,6 +424,16 @@ namespace MultApps.Windows
             this.panel7.Size = new System.Drawing.Size(171, 168);
             this.panel7.TabIndex = 35;
             // 
+            // picBoxMorango
+            // 
+            this.picBoxMorango.Image = global::MultApps.Windows.Properties.Resources.morango_1519823853148_v2_4x31;
+            this.picBoxMorango.Location = new System.Drawing.Point(14, 16);
+            this.picBoxMorango.Name = "picBoxMorango";
+            this.picBoxMorango.Size = new System.Drawing.Size(138, 134);
+            this.picBoxMorango.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxMorango.TabIndex = 26;
+            this.picBoxMorango.TabStop = false;
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -407,167 +443,179 @@ namespace MultApps.Windows
             this.panel8.Size = new System.Drawing.Size(171, 168);
             this.panel8.TabIndex = 36;
             // 
-            // button5
+            // picBoxLeiteCondensado
             // 
-            this.button5.Location = new System.Drawing.Point(81, 651);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(24, 23);
-            this.button5.TabIndex = 37;
-            this.button5.Text = "-";
-            this.button5.UseVisualStyleBackColor = true;
+            this.picBoxLeiteCondensado.Image = global::MultApps.Windows.Properties.Resources.leite_condensado_caseiro_24_05_1024x6771;
+            this.picBoxLeiteCondensado.Location = new System.Drawing.Point(18, 16);
+            this.picBoxLeiteCondensado.Name = "picBoxLeiteCondensado";
+            this.picBoxLeiteCondensado.Size = new System.Drawing.Size(138, 134);
+            this.picBoxLeiteCondensado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxLeiteCondensado.TabIndex = 28;
+            this.picBoxLeiteCondensado.TabStop = false;
             // 
-            // label9
+            // btnRemoverComplemento1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(111, 656);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(13, 13);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "0";
+            this.btnRemoverComplemento1.Location = new System.Drawing.Point(81, 651);
+            this.btnRemoverComplemento1.Name = "btnRemoverComplemento1";
+            this.btnRemoverComplemento1.Size = new System.Drawing.Size(24, 23);
+            this.btnRemoverComplemento1.TabIndex = 37;
+            this.btnRemoverComplemento1.Text = "-";
+            this.btnRemoverComplemento1.UseVisualStyleBackColor = true;
+            this.btnRemoverComplemento1.Click += new System.EventHandler(this.btnRemoverComplemento1_Click);
             // 
-            // button6
+            // lblQuantidadeGranola
             // 
-            this.button6.Location = new System.Drawing.Point(130, 651);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(24, 23);
-            this.button6.TabIndex = 39;
-            this.button6.Text = "+";
-            this.button6.UseVisualStyleBackColor = true;
+            this.lblQuantidadeGranola.AutoSize = true;
+            this.lblQuantidadeGranola.Location = new System.Drawing.Point(111, 656);
+            this.lblQuantidadeGranola.Name = "lblQuantidadeGranola";
+            this.lblQuantidadeGranola.Size = new System.Drawing.Size(13, 13);
+            this.lblQuantidadeGranola.TabIndex = 38;
+            this.lblQuantidadeGranola.Text = "0";
             // 
-            // button7
+            // btnAdicionarComplemento1
             // 
-            this.button7.Location = new System.Drawing.Point(342, 656);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(24, 23);
-            this.button7.TabIndex = 42;
-            this.button7.Text = "+";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnAdicionarComplemento1.Location = new System.Drawing.Point(130, 651);
+            this.btnAdicionarComplemento1.Name = "btnAdicionarComplemento1";
+            this.btnAdicionarComplemento1.Size = new System.Drawing.Size(24, 23);
+            this.btnAdicionarComplemento1.TabIndex = 39;
+            this.btnAdicionarComplemento1.Text = "+";
+            this.btnAdicionarComplemento1.UseVisualStyleBackColor = true;
+            this.btnAdicionarComplemento1.Click += new System.EventHandler(this.btnAdicionarComplemento1_Click);
             // 
-            // label10
+            // btnAdicionarComplemento2
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(323, 661);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 13);
-            this.label10.TabIndex = 41;
-            this.label10.Text = "0";
+            this.btnAdicionarComplemento2.Location = new System.Drawing.Point(342, 656);
+            this.btnAdicionarComplemento2.Name = "btnAdicionarComplemento2";
+            this.btnAdicionarComplemento2.Size = new System.Drawing.Size(24, 23);
+            this.btnAdicionarComplemento2.TabIndex = 42;
+            this.btnAdicionarComplemento2.Text = "+";
+            this.btnAdicionarComplemento2.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // lblQuantidadeBanana
             // 
-            this.button8.Location = new System.Drawing.Point(293, 656);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(24, 23);
-            this.button8.TabIndex = 40;
-            this.button8.Text = "-";
-            this.button8.UseVisualStyleBackColor = true;
+            this.lblQuantidadeBanana.AutoSize = true;
+            this.lblQuantidadeBanana.Location = new System.Drawing.Point(323, 661);
+            this.lblQuantidadeBanana.Name = "lblQuantidadeBanana";
+            this.lblQuantidadeBanana.Size = new System.Drawing.Size(13, 13);
+            this.lblQuantidadeBanana.TabIndex = 41;
+            this.lblQuantidadeBanana.Text = "0";
             // 
-            // button9
+            // btnRemoverComplemento2
             // 
-            this.button9.Location = new System.Drawing.Point(566, 656);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(24, 23);
-            this.button9.TabIndex = 45;
-            this.button9.Text = "+";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnRemoverComplemento2.Location = new System.Drawing.Point(293, 656);
+            this.btnRemoverComplemento2.Name = "btnRemoverComplemento2";
+            this.btnRemoverComplemento2.Size = new System.Drawing.Size(24, 23);
+            this.btnRemoverComplemento2.TabIndex = 40;
+            this.btnRemoverComplemento2.Text = "-";
+            this.btnRemoverComplemento2.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // btnAdicionarComplemento3
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(547, 661);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 13);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "0";
+            this.btnAdicionarComplemento3.Location = new System.Drawing.Point(566, 656);
+            this.btnAdicionarComplemento3.Name = "btnAdicionarComplemento3";
+            this.btnAdicionarComplemento3.Size = new System.Drawing.Size(24, 23);
+            this.btnAdicionarComplemento3.TabIndex = 45;
+            this.btnAdicionarComplemento3.Text = "+";
+            this.btnAdicionarComplemento3.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // lblQuantidadeMorango
             // 
-            this.button10.Location = new System.Drawing.Point(517, 656);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(24, 23);
-            this.button10.TabIndex = 43;
-            this.button10.Text = "-";
-            this.button10.UseVisualStyleBackColor = true;
+            this.lblQuantidadeMorango.AutoSize = true;
+            this.lblQuantidadeMorango.Location = new System.Drawing.Point(547, 661);
+            this.lblQuantidadeMorango.Name = "lblQuantidadeMorango";
+            this.lblQuantidadeMorango.Size = new System.Drawing.Size(13, 13);
+            this.lblQuantidadeMorango.TabIndex = 44;
+            this.lblQuantidadeMorango.Text = "0";
             // 
-            // button11
+            // btnRemoverComplemento3
             // 
-            this.button11.Location = new System.Drawing.Point(767, 661);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(24, 23);
-            this.button11.TabIndex = 48;
-            this.button11.Text = "+";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnRemoverComplemento3.Location = new System.Drawing.Point(517, 656);
+            this.btnRemoverComplemento3.Name = "btnRemoverComplemento3";
+            this.btnRemoverComplemento3.Size = new System.Drawing.Size(24, 23);
+            this.btnRemoverComplemento3.TabIndex = 43;
+            this.btnRemoverComplemento3.Text = "-";
+            this.btnRemoverComplemento3.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // btnAdicionarComplemento4
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(748, 666);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(13, 13);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "0";
+            this.btnAdicionarComplemento4.Location = new System.Drawing.Point(767, 661);
+            this.btnAdicionarComplemento4.Name = "btnAdicionarComplemento4";
+            this.btnAdicionarComplemento4.Size = new System.Drawing.Size(24, 23);
+            this.btnAdicionarComplemento4.TabIndex = 48;
+            this.btnAdicionarComplemento4.Text = "+";
+            this.btnAdicionarComplemento4.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // lblQuantidadeLeiteCondensado
             // 
-            this.button12.Location = new System.Drawing.Point(718, 661);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(24, 23);
-            this.button12.TabIndex = 46;
-            this.button12.Text = "-";
-            this.button12.UseVisualStyleBackColor = true;
+            this.lblQuantidadeLeiteCondensado.AutoSize = true;
+            this.lblQuantidadeLeiteCondensado.Location = new System.Drawing.Point(748, 666);
+            this.lblQuantidadeLeiteCondensado.Name = "lblQuantidadeLeiteCondensado";
+            this.lblQuantidadeLeiteCondensado.Size = new System.Drawing.Size(13, 13);
+            this.lblQuantidadeLeiteCondensado.TabIndex = 47;
+            this.lblQuantidadeLeiteCondensado.Text = "0";
             // 
-            // button13
+            // btnRemoverComplemento4
             // 
-            this.button13.Location = new System.Drawing.Point(342, 953);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(24, 23);
-            this.button13.TabIndex = 62;
-            this.button13.Text = "+";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnRemoverComplemento4.Location = new System.Drawing.Point(718, 661);
+            this.btnRemoverComplemento4.Name = "btnRemoverComplemento4";
+            this.btnRemoverComplemento4.Size = new System.Drawing.Size(24, 23);
+            this.btnRemoverComplemento4.TabIndex = 46;
+            this.btnRemoverComplemento4.Text = "-";
+            this.btnRemoverComplemento4.UseVisualStyleBackColor = true;
             // 
-            // label13
+            // btnAdicionarComplemento6
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(323, 958);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(13, 13);
-            this.label13.TabIndex = 61;
-            this.label13.Text = "0";
+            this.btnAdicionarComplemento6.Location = new System.Drawing.Point(342, 953);
+            this.btnAdicionarComplemento6.Name = "btnAdicionarComplemento6";
+            this.btnAdicionarComplemento6.Size = new System.Drawing.Size(24, 23);
+            this.btnAdicionarComplemento6.TabIndex = 62;
+            this.btnAdicionarComplemento6.Text = "+";
+            this.btnAdicionarComplemento6.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // lblQuantidadeMM
             // 
-            this.button14.Location = new System.Drawing.Point(293, 953);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(24, 23);
-            this.button14.TabIndex = 60;
-            this.button14.Text = "-";
-            this.button14.UseVisualStyleBackColor = true;
+            this.lblQuantidadeMM.AutoSize = true;
+            this.lblQuantidadeMM.Location = new System.Drawing.Point(323, 958);
+            this.lblQuantidadeMM.Name = "lblQuantidadeMM";
+            this.lblQuantidadeMM.Size = new System.Drawing.Size(13, 13);
+            this.lblQuantidadeMM.TabIndex = 61;
+            this.lblQuantidadeMM.Text = "0";
             // 
-            // button15
+            // btnRemoverComplemento6
             // 
-            this.button15.Location = new System.Drawing.Point(130, 953);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(24, 23);
-            this.button15.TabIndex = 59;
-            this.button15.Text = "+";
-            this.button15.UseVisualStyleBackColor = true;
+            this.btnRemoverComplemento6.Location = new System.Drawing.Point(293, 953);
+            this.btnRemoverComplemento6.Name = "btnRemoverComplemento6";
+            this.btnRemoverComplemento6.Size = new System.Drawing.Size(24, 23);
+            this.btnRemoverComplemento6.TabIndex = 60;
+            this.btnRemoverComplemento6.Text = "-";
+            this.btnRemoverComplemento6.UseVisualStyleBackColor = true;
             // 
-            // label14
+            // btnAdicionarComplemento5
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(111, 958);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(13, 13);
-            this.label14.TabIndex = 58;
-            this.label14.Text = "0";
+            this.btnAdicionarComplemento5.Location = new System.Drawing.Point(130, 953);
+            this.btnAdicionarComplemento5.Name = "btnAdicionarComplemento5";
+            this.btnAdicionarComplemento5.Size = new System.Drawing.Size(24, 23);
+            this.btnAdicionarComplemento5.TabIndex = 59;
+            this.btnAdicionarComplemento5.Text = "+";
+            this.btnAdicionarComplemento5.UseVisualStyleBackColor = true;
             // 
-            // button16
+            // lblQuantidadeLeiteNinho
             // 
-            this.button16.Location = new System.Drawing.Point(81, 953);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(24, 23);
-            this.button16.TabIndex = 57;
-            this.button16.Text = "-";
-            this.button16.UseVisualStyleBackColor = true;
+            this.lblQuantidadeLeiteNinho.AutoSize = true;
+            this.lblQuantidadeLeiteNinho.Location = new System.Drawing.Point(111, 958);
+            this.lblQuantidadeLeiteNinho.Name = "lblQuantidadeLeiteNinho";
+            this.lblQuantidadeLeiteNinho.Size = new System.Drawing.Size(13, 13);
+            this.lblQuantidadeLeiteNinho.TabIndex = 58;
+            this.lblQuantidadeLeiteNinho.Text = "0";
+            // 
+            // btnRemoverComplemento5
+            // 
+            this.btnRemoverComplemento5.Location = new System.Drawing.Point(81, 953);
+            this.btnRemoverComplemento5.Name = "btnRemoverComplemento5";
+            this.btnRemoverComplemento5.Size = new System.Drawing.Size(24, 23);
+            this.btnRemoverComplemento5.TabIndex = 57;
+            this.btnRemoverComplemento5.Text = "-";
+            this.btnRemoverComplemento5.UseVisualStyleBackColor = true;
             // 
             // lblPrecoMM
             // 
@@ -633,29 +681,11 @@ namespace MultApps.Windows
             this.lblPedido.TabIndex = 63;
             this.lblPedido.Text = "Seu pedido";
             // 
-            // lblItens
-            // 
-            this.lblItens.AutoSize = true;
-            this.lblItens.Location = new System.Drawing.Point(899, 152);
-            this.lblItens.Name = "lblItens";
-            this.lblItens.Size = new System.Drawing.Size(61, 13);
-            this.lblItens.TabIndex = 64;
-            this.lblItens.Text = "Açaí 300ml";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1040, 152);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 65;
-            this.label1.Text = "R$15.00";
-            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(899, 367);
+            this.lblTotal.Location = new System.Drawing.Point(899, 528);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(53, 18);
             this.lblTotal.TabIndex = 66;
@@ -665,11 +695,11 @@ namespace MultApps.Windows
             // 
             this.lblPrecoTotal.AutoSize = true;
             this.lblPrecoTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecoTotal.Location = new System.Drawing.Point(1040, 367);
+            this.lblPrecoTotal.Location = new System.Drawing.Point(899, 556);
             this.lblPrecoTotal.Name = "lblPrecoTotal";
-            this.lblPrecoTotal.Size = new System.Drawing.Size(75, 18);
+            this.lblPrecoTotal.Size = new System.Drawing.Size(48, 18);
             this.lblPrecoTotal.TabIndex = 67;
-            this.lblPrecoTotal.Text = "R$15.00";
+            this.lblPrecoTotal.Text = "aaaa";
             // 
             // panel11
             // 
@@ -698,7 +728,7 @@ namespace MultApps.Windows
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel14.Location = new System.Drawing.Point(878, 324);
+            this.panel14.Location = new System.Drawing.Point(870, 515);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(253, 10);
             this.panel14.TabIndex = 22;
@@ -713,6 +743,7 @@ namespace MultApps.Windows
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Image = global::MultApps.Windows.Properties.Resources._071bdfb90c1c5bc5e99966178d95ce901;
             this.pictureBox5.Location = new System.Drawing.Point(265, 737);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(138, 134);
@@ -730,45 +761,9 @@ namespace MultApps.Windows
             this.pictureBox6.TabIndex = 49;
             this.pictureBox6.TabStop = false;
             // 
-            // picBoxGranola
-            // 
-            this.picBoxGranola.Location = new System.Drawing.Point(15, 16);
-            this.picBoxGranola.Name = "picBoxGranola";
-            this.picBoxGranola.Size = new System.Drawing.Size(138, 134);
-            this.picBoxGranola.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxGranola.TabIndex = 21;
-            this.picBoxGranola.TabStop = false;
-            // 
-            // picBoxBanana
-            // 
-            this.picBoxBanana.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.picBoxBanana.Location = new System.Drawing.Point(15, 16);
-            this.picBoxBanana.Name = "picBoxBanana";
-            this.picBoxBanana.Size = new System.Drawing.Size(138, 134);
-            this.picBoxBanana.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxBanana.TabIndex = 24;
-            this.picBoxBanana.TabStop = false;
-            // 
-            // picBoxMorango
-            // 
-            this.picBoxMorango.Location = new System.Drawing.Point(14, 16);
-            this.picBoxMorango.Name = "picBoxMorango";
-            this.picBoxMorango.Size = new System.Drawing.Size(138, 134);
-            this.picBoxMorango.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxMorango.TabIndex = 26;
-            this.picBoxMorango.TabStop = false;
-            // 
-            // picBoxLeiteCondensado
-            // 
-            this.picBoxLeiteCondensado.Location = new System.Drawing.Point(18, 16);
-            this.picBoxLeiteCondensado.Name = "picBoxLeiteCondensado";
-            this.picBoxLeiteCondensado.Size = new System.Drawing.Size(138, 134);
-            this.picBoxLeiteCondensado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxLeiteCondensado.TabIndex = 28;
-            this.picBoxLeiteCondensado.TabStop = false;
-            // 
             // picBoxFamilia
             // 
+            this.picBoxFamilia.Image = global::MultApps.Windows.Properties.Resources._31;
             this.picBoxFamilia.Location = new System.Drawing.Point(689, 96);
             this.picBoxFamilia.Name = "picBoxFamilia";
             this.picBoxFamilia.Size = new System.Drawing.Size(138, 134);
@@ -778,6 +773,7 @@ namespace MultApps.Windows
             // 
             // picBoxGrande
             // 
+            this.picBoxGrande.Image = global::MultApps.Windows.Properties.Resources._31;
             this.picBoxGrande.Location = new System.Drawing.Point(475, 96);
             this.picBoxGrande.Name = "picBoxGrande";
             this.picBoxGrande.Size = new System.Drawing.Size(138, 134);
@@ -787,6 +783,7 @@ namespace MultApps.Windows
             // 
             // picBoxMedio
             // 
+            this.picBoxMedio.Image = global::MultApps.Windows.Properties.Resources._31;
             this.picBoxMedio.Location = new System.Drawing.Point(264, 96);
             this.picBoxMedio.Name = "picBoxMedio";
             this.picBoxMedio.Size = new System.Drawing.Size(138, 134);
@@ -796,6 +793,7 @@ namespace MultApps.Windows
             // 
             // picBoxPequeno
             // 
+            this.picBoxPequeno.Image = global::MultApps.Windows.Properties.Resources._31;
             this.picBoxPequeno.Location = new System.Drawing.Point(51, 96);
             this.picBoxPequeno.Name = "picBoxPequeno";
             this.picBoxPequeno.Size = new System.Drawing.Size(138, 134);
@@ -803,28 +801,64 @@ namespace MultApps.Windows
             this.picBoxPequeno.TabIndex = 1;
             this.picBoxPequeno.TabStop = false;
             // 
+            // listBoxPedidos
+            // 
+            this.listBoxPedidos.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.listBoxPedidos.FormattingEnabled = true;
+            this.listBoxPedidos.Location = new System.Drawing.Point(886, 134);
+            this.listBoxPedidos.Name = "listBoxPedidos";
+            this.listBoxPedidos.Size = new System.Drawing.Size(229, 368);
+            this.listBoxPedidos.TabIndex = 68;
+            this.listBoxPedidos.Visible = false;
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.BackColor = System.Drawing.Color.Purple;
+            this.btnRemover.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemover.ForeColor = System.Drawing.Color.White;
+            this.btnRemover.Location = new System.Drawing.Point(867, 44);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(179, 30);
+            this.btnRemover.TabIndex = 69;
+            this.btnRemover.Text = "Remover";
+            this.btnRemover.UseVisualStyleBackColor = false;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            // 
+            // listBoxPrecoTotal
+            // 
+            this.listBoxPrecoTotal.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.listBoxPrecoTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.listBoxPrecoTotal.FormattingEnabled = true;
+            this.listBoxPrecoTotal.ItemHeight = 18;
+            this.listBoxPrecoTotal.Location = new System.Drawing.Point(1020, 528);
+            this.listBoxPrecoTotal.Name = "listBoxPrecoTotal";
+            this.listBoxPrecoTotal.Size = new System.Drawing.Size(95, 22);
+            this.listBoxPrecoTotal.TabIndex = 70;
+            this.listBoxPrecoTotal.Visible = false;
+            // 
             // FrmLojaAcai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1154, 1061);
-            this.Controls.Add(this.panel15);
+            this.Controls.Add(this.listBoxPrecoTotal);
+            this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.panel14);
+            this.Controls.Add(this.listBoxPedidos);
+            this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.lblPrecoTotal);
             this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblItens);
             this.Controls.Add(this.lblPedido);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.button15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.button16);
+            this.Controls.Add(this.btnAdicionarComplemento6);
+            this.Controls.Add(this.lblQuantidadeMM);
+            this.Controls.Add(this.btnRemoverComplemento6);
+            this.Controls.Add(this.btnAdicionarComplemento5);
+            this.Controls.Add(this.lblQuantidadeLeiteNinho);
+            this.Controls.Add(this.btnRemoverComplemento5);
             this.Controls.Add(this.lblPrecoMM);
             this.Controls.Add(this.lblPrecoLeiteNinho);
             this.Controls.Add(this.lblMM);
@@ -833,18 +867,18 @@ namespace MultApps.Windows
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel10);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnAdicionarComplemento4);
+            this.Controls.Add(this.lblQuantidadeLeiteCondensado);
+            this.Controls.Add(this.btnRemoverComplemento4);
+            this.Controls.Add(this.btnAdicionarComplemento3);
+            this.Controls.Add(this.lblQuantidadeMorango);
+            this.Controls.Add(this.btnRemoverComplemento3);
+            this.Controls.Add(this.btnAdicionarComplemento2);
+            this.Controls.Add(this.lblQuantidadeBanana);
+            this.Controls.Add(this.btnRemoverComplemento2);
+            this.Controls.Add(this.btnAdicionarComplemento1);
+            this.Controls.Add(this.lblQuantidadeGranola);
+            this.Controls.Add(this.btnRemoverComplemento1);
             this.Controls.Add(this.lblPrecoLeiteCondensado);
             this.Controls.Add(this.lblPrecoMorango);
             this.Controls.Add(this.lblPrecoBanana);
@@ -861,17 +895,17 @@ namespace MultApps.Windows
             this.Controls.Add(this.lblPrecoFamilia);
             this.Controls.Add(this.lblPrecoGrande);
             this.Controls.Add(this.lblPrecoMedio);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnSelecionar4);
             this.Controls.Add(this.lblAcaiFamilia);
             this.Controls.Add(this.picBoxFamilia);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnSelecionar3);
             this.Controls.Add(this.lblAcaiGrande);
             this.Controls.Add(this.picBoxGrande);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSelecionar2);
             this.Controls.Add(this.lblAcaiMedio);
             this.Controls.Add(this.picBoxMedio);
             this.Controls.Add(this.lblPrecoPequeno);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSelecionar1);
             this.Controls.Add(this.lblAcaiPequeno);
             this.Controls.Add(this.picBoxPequeno);
             this.Controls.Add(this.lblTamanho);
@@ -882,15 +916,15 @@ namespace MultApps.Windows
             this.Name = "FrmLojaAcai";
             this.Text = "FrmLojaAcai";
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxGranola)).EndInit();
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxBanana)).EndInit();
             this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxMorango)).EndInit();
             this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLeiteCondensado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxGranola)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxBanana)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxMorango)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxLeiteCondensado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFamilia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGrande)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMedio)).EndInit();
@@ -905,15 +939,15 @@ namespace MultApps.Windows
         private System.Windows.Forms.Label lblTamanho;
         private System.Windows.Forms.PictureBox picBoxPequeno;
         private System.Windows.Forms.Label lblAcaiPequeno;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSelecionar1;
         private System.Windows.Forms.Label lblPrecoPequeno;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSelecionar2;
         private System.Windows.Forms.Label lblAcaiMedio;
         private System.Windows.Forms.PictureBox picBoxMedio;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSelecionar3;
         private System.Windows.Forms.Label lblAcaiGrande;
         private System.Windows.Forms.PictureBox picBoxGrande;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSelecionar4;
         private System.Windows.Forms.Label lblAcaiFamilia;
         private System.Windows.Forms.PictureBox picBoxFamilia;
         private System.Windows.Forms.Label lblPrecoMedio;
@@ -940,24 +974,24 @@ namespace MultApps.Windows
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button btnRemoverComplemento1;
+        private System.Windows.Forms.Label lblQuantidadeGranola;
+        private System.Windows.Forms.Button btnAdicionarComplemento1;
+        private System.Windows.Forms.Button btnAdicionarComplemento2;
+        private System.Windows.Forms.Label lblQuantidadeBanana;
+        private System.Windows.Forms.Button btnRemoverComplemento2;
+        private System.Windows.Forms.Button btnAdicionarComplemento3;
+        private System.Windows.Forms.Label lblQuantidadeMorango;
+        private System.Windows.Forms.Button btnRemoverComplemento3;
+        private System.Windows.Forms.Button btnAdicionarComplemento4;
+        private System.Windows.Forms.Label lblQuantidadeLeiteCondensado;
+        private System.Windows.Forms.Button btnRemoverComplemento4;
+        private System.Windows.Forms.Button btnAdicionarComplemento6;
+        private System.Windows.Forms.Label lblQuantidadeMM;
+        private System.Windows.Forms.Button btnRemoverComplemento6;
+        private System.Windows.Forms.Button btnAdicionarComplemento5;
+        private System.Windows.Forms.Label lblQuantidadeLeiteNinho;
+        private System.Windows.Forms.Button btnRemoverComplemento5;
         private System.Windows.Forms.Label lblPrecoMM;
         private System.Windows.Forms.Label lblPrecoLeiteNinho;
         private System.Windows.Forms.Label lblMM;
@@ -967,8 +1001,6 @@ namespace MultApps.Windows
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label lblPedido;
-        private System.Windows.Forms.Label lblItens;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblPrecoTotal;
         private System.Windows.Forms.Panel panel11;
@@ -976,5 +1008,8 @@ namespace MultApps.Windows
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.ListBox listBoxPedidos;
+        private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.ListBox listBoxPrecoTotal;
     }
 }
