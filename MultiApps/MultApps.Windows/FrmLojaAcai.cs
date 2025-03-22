@@ -37,21 +37,6 @@ namespace MultApps.Windows
             }
         }
 
-        public class ValorTotal
-        {
-            public decimal Total { get; set; }
-
-            public ValorTotal(decimal total)
-            {
-                Total = total;
-            }
-
-            public override string ToString()
-            {
-                return $"R${Total}";
-            }
-        }
-
         private void btnRemover_Click(object sender, EventArgs e)
         {
             if (listBoxPedidos.SelectedItem != null)
@@ -63,15 +48,20 @@ namespace MultApps.Windows
                 MessageBox.Show("Selecione um item para remover.");
             }
         }
+        public void ValorTotal1(decimal valorASomar)
+        {
+            decimal total = 0;
+            decimal valorTotal = total + valorASomar;
+
+            lblPrecoTotal.Text = valorTotal.ToString();
+        }
 
         private void btnSelecionar1_Click(object sender, EventArgs e)
         {
             listBoxPedidos.Items.Add(new PedidoItem("Açaí 300ml", 1, 15.00m));
             listBoxPedidos.Visible = true;
 
-            listBoxPrecoTotal.Items.Add(new ValorTotal(15.00m));
-            listBoxPrecoTotal.Visible = true;
-
+            ValorTotal1(+15);
         }
 
         private void btnSelecionar2_Click(object sender, EventArgs e)
