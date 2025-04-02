@@ -144,5 +144,11 @@
   <ItemGroup>
     <None Include="Resources\morango-1519823853148_v2_4x3.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CONTROLLER\MultiApps.Controller\MultiApps.Controller.csproj">
+      <Project>{2dad197c-9c75-4e10-9098-abc606bfe348}</Project>
+      <Name>MultiApps.Controller</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
