@@ -103,6 +103,7 @@
     <Compile Include="Entidades\Produto.cs" />
     <Compile Include="Enum\StatusEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CategoriaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\banco_de_dados.sql" />
