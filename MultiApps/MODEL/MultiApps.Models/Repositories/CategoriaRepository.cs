@@ -18,13 +18,13 @@ namespace MultApps.Models.Repositories
             using (IDbConnection db = new MySqlConnection(ConnectionString))
             {
                 var comandoSql = @"INSERT INTO categoria (nome, status)
-                                   VALUES(@Nome, @Status )";
+                                   VALUES (@Nome, @Status)";
 
                 var parametros = new DynamicParameters();
                 parametros.Add("@Nome", categoria.Nome);
-                parametros.Add("@Status", categoria.Status);
+                parametros.Add("@Status", categoria.Status.ToString());
 
-                var resultado = db.Execute(comandoSql, parametros);
+                    var resultado = db.Execute(comandoSql, parametros);
                 return resultado > 0;
             }
         }
@@ -49,6 +49,39 @@ namespace MultApps.Models.Repositories
 
                 var resultado = db.Query<Categoria>(comandoSql, parametros).FirstOrDefault();
                 return resultado;   
+            }
+        }
+
+        public bool AtualizarCategoria(Categoria categoria)
+        {
+            using (IDbConnection db = new MySqlConnection (ConnectionString))
+            {
+                var comandoSql = @"UPDATE categoria SET nome = @Nome, status = @Status WHERE id = @Id";
+
+                var parametros = new DynamicParameters();
+                parametros.Add("@Id", categoria.Id);
+                parametros.Add("@Nome", categoria.Nome);
+                parametros.Add("@Status", categoria.Status.ToString());
+
+                var resposta = db.Execute(comandoSql, parametros);
+                return resposta > 0;
+
+                //db.Execute = INSERT, UPDATE E DELETE
+                //db.Query = SELECT
+            }
+        }
+
+        public bool DeletarCategoria(int id)
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandoSql = @"DELETE FROM categoria WHERE id = @Id";
+
+                var parametros = new DynamicParameters();
+                parametros.Add("@Id", id);
+
+                var resultado = db.Execute(comandoSql, parametros);
+                return resultado > 0;
             }
         }
     }
