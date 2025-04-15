@@ -24,7 +24,7 @@ namespace MultApps.Models.Repositories
                 parametros.Add("@Nome", categoria.Nome);
                 parametros.Add("@Status", categoria.Status.ToString());
 
-                    var resultado = db.Execute(comandoSql, parametros);
+                var resultado = db.Execute(comandoSql, parametros);
                 return resultado > 0;
             }
         }
@@ -48,13 +48,13 @@ namespace MultApps.Models.Repositories
                 parametros.Add(@"Id", id);
 
                 var resultado = db.Query<Categoria>(comandoSql, parametros).FirstOrDefault();
-                return resultado;   
+                return resultado;
             }
         }
 
         public bool AtualizarCategoria(Categoria categoria)
         {
-            using (IDbConnection db = new MySqlConnection (ConnectionString))
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
             {
                 var comandoSql = @"UPDATE categoria SET nome = @Nome, status = @Status WHERE id = @Id";
 
@@ -66,8 +66,6 @@ namespace MultApps.Models.Repositories
                 var resposta = db.Execute(comandoSql, parametros);
                 return resposta > 0;
 
-                //db.Execute = INSERT, UPDATE E DELETE
-                //db.Query = SELECT
             }
         }
 
