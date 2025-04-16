@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblFiltrar = new System.Windows.Forms.Label();
+            this.cmbFiltrar = new System.Windows.Forms.ComboBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.lblCpf = new System.Windows.Forms.Label();
@@ -45,10 +51,6 @@
             this.txtDataCadastro = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblId = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +58,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.lblFiltrar);
+            this.groupBox1.Controls.Add(this.cmbFiltrar);
             this.groupBox1.Controls.Add(this.lblId);
             this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.lblEmail);
@@ -76,10 +80,69 @@
             this.groupBox1.Controls.Add(this.txtDataCadastro);
             this.groupBox1.Location = new System.Drawing.Point(12, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1158, 159);
+            this.groupBox1.Size = new System.Drawing.Size(1172, 159);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastrar nova categoria";
+            // 
+            // lblFiltrar
+            // 
+            this.lblFiltrar.AutoSize = true;
+            this.lblFiltrar.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltrar.Location = new System.Drawing.Point(204, 87);
+            this.lblFiltrar.Name = "lblFiltrar";
+            this.lblFiltrar.Size = new System.Drawing.Size(52, 19);
+            this.lblFiltrar.TabIndex = 23;
+            this.lblFiltrar.Text = "Filtrar";
+            // 
+            // cmbFiltrar
+            // 
+            this.cmbFiltrar.FormattingEnabled = true;
+            this.cmbFiltrar.Items.AddRange(new object[] {
+            "Todos",
+            "Ativo",
+            "Inativo"});
+            this.cmbFiltrar.Location = new System.Drawing.Point(208, 108);
+            this.cmbFiltrar.Name = "cmbFiltrar";
+            this.cmbFiltrar.Size = new System.Drawing.Size(169, 21);
+            this.cmbFiltrar.TabIndex = 22;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(417, 87);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(22, 19);
+            this.lblId.TabIndex = 20;
+            this.lblId.Text = "Id";
+            this.lblId.Visible = false;
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(417, 109);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(134, 20);
+            this.txtId.TabIndex = 21;
+            this.txtId.Visible = false;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(204, 26);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(48, 19);
+            this.lblEmail.TabIndex = 18;
+            this.lblEmail.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(208, 48);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(192, 20);
+            this.txtEmail.TabIndex = 19;
             // 
             // lblSenha
             // 
@@ -161,9 +224,8 @@
             // 
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
-            "Todos",
-            "Ativos",
-            "Inativos"});
+            "Ativo",
+            "Inativo"});
             this.cmbStatus.Location = new System.Drawing.Point(10, 108);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(169, 21);
@@ -218,7 +280,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 231);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1182, 294);
+            this.dataGridView1.Size = new System.Drawing.Size(1196, 294);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
@@ -233,46 +295,11 @@
             this.lblTitulo.TabIndex = 15;
             this.lblTitulo.Text = "CADASTRO DE USUÁRIOS";
             // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(204, 26);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(48, 19);
-            this.lblEmail.TabIndex = 18;
-            this.lblEmail.Text = "Email";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(208, 48);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(192, 20);
-            this.txtEmail.TabIndex = 19;
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.Location = new System.Drawing.Point(219, 87);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(22, 19);
-            this.lblId.TabIndex = 20;
-            this.lblId.Text = "Id";
-            // 
-            // txtId
-            // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(219, 109);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(134, 20);
-            this.txtId.TabIndex = 21;
-            // 
             // FrmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 525);
+            this.ClientSize = new System.Drawing.Size(1196, 525);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
@@ -307,6 +334,8 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblFiltrar;
+        private System.Windows.Forms.ComboBox cmbFiltrar;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtId;
     }

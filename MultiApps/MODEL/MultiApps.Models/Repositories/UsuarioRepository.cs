@@ -36,7 +36,7 @@ namespace MultiApps.Models.Repositories
         {
             using (IDbConnection db = new MySqlConnection(ConnectionString))
             {
-                var comandoSql = @"SELECT id, nome, cpf, email, senha, data_cadastro, data_ultimoacesso, status FROM usuario";
+                var comandoSql = @"SELECT id, nome, cpf, email, senha, data_cadastro AS DataCadastro, data_ultimoacesso AS DataUltimoAcesso, status AS Status FROM usuario";
                 var resultado = db.Query<Usuario>(comandoSql).ToList();
                 return resultado;
             }
@@ -79,11 +79,26 @@ namespace MultiApps.Models.Repositories
         {
             using (IDbConnection db = new MySqlConnection(ConnectionString))
             {
-                var comandoSql = @"SELECT id, nome, cpf, email, senha, data_cadastro, data_ultimoacesso, status WHERE id = @Id";
+                var comandoSql = @"SELECT id, nome, cpf, email, senha, data_cadastro AS DataCadastro, data_ultimoacesso AS DataUltimoAcesso, status AS Status FROM usuario WHERE id = @Id";
                 var parametros = new DynamicParameters();
-                parametros.Add(@"Id", id);
+                parametros.Add("@Id", id);
 
                 var resultado = db.Query<Usuario>(comandoSql, parametros).FirstOrDefault();
+                return resultado;
+            }
+        }
+
+        public List<Usuario> FiltrarUsuariosAtivos()
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var usuario = new Usuario();
+
+                var comandoSql = @"SELECT id, nome, cpf, email, senha, data_cadastro AS DataCadastro, data_ultimoacesso AS DataUltimoAcesso, status AS Status 
+                           FROM usuario 
+                           WHERE status = 'ativo'";
+
+                var resultado = db.Query<Usuario>(comandoSql).ToList();
                 return resultado;
             }
         }
