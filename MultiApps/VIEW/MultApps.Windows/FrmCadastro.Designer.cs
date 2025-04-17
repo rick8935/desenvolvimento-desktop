@@ -38,7 +38,6 @@
             this.lblSenha = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.lblCpf = new System.Windows.Forms.Label();
-            this.txtCpf = new System.Windows.Forms.TextBox();
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.txtDataCadastro = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +58,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.txtCpf);
             this.groupBox1.Controls.Add(this.lblFiltrar);
             this.groupBox1.Controls.Add(this.cmbFiltrar);
             this.groupBox1.Controls.Add(this.lblId);
@@ -67,7 +68,6 @@
             this.groupBox1.Controls.Add(this.lblSenha);
             this.groupBox1.Controls.Add(this.txtSenha);
             this.groupBox1.Controls.Add(this.lblCpf);
-            this.groupBox1.Controls.Add(this.txtCpf);
             this.groupBox1.Controls.Add(this.btnDeletar);
             this.groupBox1.Controls.Add(this.btnCadastrar);
             this.groupBox1.Controls.Add(this.lblStatus);
@@ -98,10 +98,6 @@
             // cmbFiltrar
             // 
             this.cmbFiltrar.FormattingEnabled = true;
-            this.cmbFiltrar.Items.AddRange(new object[] {
-            "Todos",
-            "Ativo",
-            "Inativo"});
             this.cmbFiltrar.Location = new System.Drawing.Point(208, 108);
             this.cmbFiltrar.Name = "cmbFiltrar";
             this.cmbFiltrar.Size = new System.Drawing.Size(169, 21);
@@ -148,7 +144,7 @@
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(597, 26);
+            this.lblSenha.Location = new System.Drawing.Point(496, 26);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(55, 19);
             this.lblSenha.TabIndex = 16;
@@ -156,10 +152,12 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(597, 48);
+            this.txtSenha.Location = new System.Drawing.Point(496, 48);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(134, 20);
             this.txtSenha.TabIndex = 17;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // lblCpf
             // 
@@ -170,13 +168,6 @@
             this.lblCpf.Size = new System.Drawing.Size(38, 19);
             this.lblCpf.TabIndex = 14;
             this.lblCpf.Text = "CPF";
-            // 
-            // txtCpf
-            // 
-            this.txtCpf.Location = new System.Drawing.Point(405, 48);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(186, 20);
-            this.txtCpf.TabIndex = 15;
             // 
             // btnDeletar
             // 
@@ -223,9 +214,6 @@
             // cmbStatus
             // 
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "Ativo",
-            "Inativo"});
             this.cmbStatus.Location = new System.Drawing.Point(10, 108);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(169, 21);
@@ -241,7 +229,7 @@
             // txtUltimoAcesso
             // 
             this.txtUltimoAcesso.Enabled = false;
-            this.txtUltimoAcesso.Location = new System.Drawing.Point(943, 49);
+            this.txtUltimoAcesso.Location = new System.Drawing.Point(842, 49);
             this.txtUltimoAcesso.Name = "txtUltimoAcesso";
             this.txtUltimoAcesso.Size = new System.Drawing.Size(192, 20);
             this.txtUltimoAcesso.TabIndex = 8;
@@ -250,7 +238,7 @@
             // 
             this.lblDataCadastro.AutoSize = true;
             this.lblDataCadastro.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataCadastro.Location = new System.Drawing.Point(737, 27);
+            this.lblDataCadastro.Location = new System.Drawing.Point(636, 27);
             this.lblDataCadastro.Name = "lblDataCadastro";
             this.lblDataCadastro.Size = new System.Drawing.Size(138, 19);
             this.lblDataCadastro.TabIndex = 5;
@@ -260,7 +248,7 @@
             // 
             this.lblUltimoAcesso.AutoSize = true;
             this.lblUltimoAcesso.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUltimoAcesso.Location = new System.Drawing.Point(939, 27);
+            this.lblUltimoAcesso.Location = new System.Drawing.Point(838, 27);
             this.lblUltimoAcesso.Name = "lblUltimoAcesso";
             this.lblUltimoAcesso.Size = new System.Drawing.Size(176, 19);
             this.lblUltimoAcesso.TabIndex = 7;
@@ -269,7 +257,7 @@
             // txtDataCadastro
             // 
             this.txtDataCadastro.Enabled = false;
-            this.txtDataCadastro.Location = new System.Drawing.Point(741, 49);
+            this.txtDataCadastro.Location = new System.Drawing.Point(640, 49);
             this.txtDataCadastro.Name = "txtDataCadastro";
             this.txtDataCadastro.Size = new System.Drawing.Size(192, 20);
             this.txtDataCadastro.TabIndex = 6;
@@ -294,6 +282,14 @@
             this.lblTitulo.Size = new System.Drawing.Size(340, 32);
             this.lblTitulo.TabIndex = 15;
             this.lblTitulo.Text = "CADASTRO DE USUÁRIOS";
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(405, 49);
+            this.txtCpf.Mask = "999,999,999-99";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(84, 20);
+            this.txtCpf.TabIndex = 24;
             // 
             // FrmCadastro
             // 
@@ -328,7 +324,6 @@
         private System.Windows.Forms.TextBox txtDataCadastro;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblCpf;
-        private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label lblTitulo;
@@ -338,5 +333,6 @@
         private System.Windows.Forms.ComboBox cmbFiltrar;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.MaskedTextBox txtCpf;
     }
 }

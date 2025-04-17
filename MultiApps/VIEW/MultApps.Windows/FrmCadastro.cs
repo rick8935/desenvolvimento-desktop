@@ -20,49 +20,103 @@ namespace MultApps.Windows
         public FrmCadastro()
         {
             InitializeComponent();
+            var status = new[] { "ativo", "inativo" };
+            var filtros = new[] { "todos", "ativos", "inativos" };
+            cmbStatus.Items.AddRange(status);
+            cmbFiltrar.Items.AddRange(filtros);
+            
+            cmbStatus.SelectedIndex = 0;
+
             CarregarTodosUsuarios();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            var usuario = new Usuario();
-            usuario.Nome = txtNome.Text;
-            usuario.Cpf = txtCpf.Text;
-            usuario.Email = txtEmail.Text;
-            usuario.Senha = txtSenha.Text;
-            usuario.Status = (StatusEnum)cmbStatus.SelectedIndex;
-
-            var usuarioRepository = new UsuarioRepository();
-
-            if (string.IsNullOrEmpty(txtId.Text))
+            try
             {
-                var resultado = usuarioRepository.CadastrarUsuario(usuario);
-                if (resultado)
+                if (TemCamposEmBranco())
                 {
-                    MessageBox.Show("Categoria cadastrada com sucesso");
+                    return;
+                }
+                var usuario = new Usuario();
+                usuario.Nome = txtNome.Text;
+                usuario.Cpf = txtCpf.Text;
+                usuario.Email = txtEmail.Text;
+                usuario.Senha = txtSenha.Text;
+                usuario.Status = (StatusEnum)cmbStatus.SelectedIndex;
+
+                var usuarioRepository = new UsuarioRepository();
+
+                var emailExistente = usuarioRepository.EmailJaExiste(usuario.Email);
+                if(emailExistente)
+                {
+                    MessageBox.Show($"O email {usuario.Email} já está cadastrado.");
+                }
+
+                if (string.IsNullOrEmpty(txtId.Text))
+                {
+                    var resultado = usuarioRepository.CadastrarUsuario(usuario);
+                    if (resultado)
+                    {
+                        MessageBox.Show("Categoria cadastrada com sucesso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao cadastrar categoria");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao cadastrar categoria");
+                    usuario.Id = int.Parse(txtId.Text);
+                    var resultado = usuarioRepository.AtualizarUsuario(usuario);
+
+                    if (resultado)
+                    {
+                        MessageBox.Show("Categoria atualizada com sucesso");
+                        btnCadastrar.Text = "Cadastrar";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao atualizar categoria");
+                    }
                 }
+
+                CarregarTodosUsuarios();
             }
-            else
+            catch (Exception)
             {
-                usuario.Id = int.Parse(txtId.Text);
-                var resultado = usuarioRepository.AtualizarUsuario(usuario);
 
-                if (resultado)
-                {
-                    MessageBox.Show("Categoria atualizada com sucesso");
-                    btnCadastrar.Text = "Cadastrar";
-                }
-                else
-                {
-                    MessageBox.Show("Erro ao atualizar categoria");
-                }
+                throw;
             }
+        }
 
-            CarregarTodosUsuarios();
+        private bool TemCamposEmBranco()
+        {
+            if (string.IsNullOrEmpty(txtNome.Text))
+            {
+                MessageBox.Show("Campo nome é obrigatório");
+                txtNome.Focus();
+                return true;
+            }
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                MessageBox.Show("Campo email é obrigatório");
+                txtEmail.Focus();
+                return true;
+            }
+            if (string.IsNullOrEmpty(txtCpf.Text))
+            {
+                MessageBox.Show("Campo CPF é obrigatório");
+                txtCpf.Focus();
+                return true;
+            }
+            if (string.IsNullOrEmpty(txtSenha.Text))
+            {
+                MessageBox.Show("Campo senha é obrigatório");
+                txtSenha.Focus();
+                return true;
+            }
+            return false; 
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)
@@ -93,7 +147,7 @@ namespace MultApps.Windows
 
             if (cmbFiltrar.SelectedIndex == 0)
             {
-                listaDeUsuarios = usuarioRepository.FiltrarUsuariosAtivos();
+                
             }
 
             dataGridView1.AutoGenerateColumns = false;

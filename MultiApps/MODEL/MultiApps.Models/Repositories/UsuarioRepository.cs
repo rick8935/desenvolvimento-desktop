@@ -102,5 +102,17 @@ namespace MultiApps.Models.Repositories
                 return resultado;
             }
         }
+
+        public bool EmailJaExiste(string email)
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandoSql = "SELECT COUNT * FROM usuario WHERE email = @Email";
+                var parametros = new DynamicParameters();
+                parametros.Add("@Email", email);
+                var resultado = db.ExecuteScalar<int>(comandoSql, parametros);
+                return resultado > 0;
+            }
+        }
     }
 }
