@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.lblFiltrar = new System.Windows.Forms.Label();
             this.cmbFiltrar = new System.Windows.Forms.ComboBox();
             this.lblId = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.txtDataCadastro = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +85,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastrar nova categoria";
             // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(405, 49);
+            this.txtCpf.Mask = "999,999,999-99";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(84, 20);
+            this.txtCpf.TabIndex = 3;
+            // 
             // lblFiltrar
             // 
             this.lblFiltrar.AutoSize = true;
@@ -101,7 +109,7 @@
             this.cmbFiltrar.Location = new System.Drawing.Point(208, 108);
             this.cmbFiltrar.Name = "cmbFiltrar";
             this.cmbFiltrar.Size = new System.Drawing.Size(169, 21);
-            this.cmbFiltrar.TabIndex = 22;
+            this.cmbFiltrar.TabIndex = 6;
             // 
             // lblId
             // 
@@ -138,7 +146,7 @@
             this.txtEmail.Location = new System.Drawing.Point(208, 48);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(192, 20);
-            this.txtEmail.TabIndex = 19;
+            this.txtEmail.TabIndex = 2;
             // 
             // lblSenha
             // 
@@ -156,7 +164,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(134, 20);
-            this.txtSenha.TabIndex = 17;
+            this.txtSenha.TabIndex = 4;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // lblCpf
@@ -175,7 +183,7 @@
             this.btnDeletar.Location = new System.Drawing.Point(743, 98);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(132, 38);
-            this.btnDeletar.TabIndex = 13;
+            this.btnDeletar.TabIndex = 8;
             this.btnDeletar.Text = "Deletar";
             this.btnDeletar.UseVisualStyleBackColor = true;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
@@ -186,7 +194,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(597, 98);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(132, 38);
-            this.btnCadastrar.TabIndex = 11;
+            this.btnCadastrar.TabIndex = 7;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -217,14 +225,14 @@
             this.cmbStatus.Location = new System.Drawing.Point(10, 108);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(169, 21);
-            this.cmbStatus.TabIndex = 9;
+            this.cmbStatus.TabIndex = 5;
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(6, 49);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(192, 20);
-            this.txtNome.TabIndex = 4;
+            this.txtNome.TabIndex = 1;
             // 
             // txtUltimoAcesso
             // 
@@ -283,14 +291,6 @@
             this.lblTitulo.TabIndex = 15;
             this.lblTitulo.Text = "CADASTRO DE USUÁRIOS";
             // 
-            // txtCpf
-            // 
-            this.txtCpf.Location = new System.Drawing.Point(405, 49);
-            this.txtCpf.Mask = "999,999,999-99";
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(84, 20);
-            this.txtCpf.TabIndex = 24;
-            // 
             // FrmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,6 +301,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmCadastro";
             this.Text = "FrmCadastro";
+            this.Load += new System.EventHandler(this.FrmCadastro_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

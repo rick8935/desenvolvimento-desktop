@@ -20,12 +20,12 @@ namespace MultApps.Windows
         public FrmCadastro()
         {
             InitializeComponent();
-            var status = new[] { "ativo", "inativo" };
+            var status = new[] { "inativo", "ativo" };
             var filtros = new[] { "todos", "ativos", "inativos" };
             cmbStatus.Items.AddRange(status);
             cmbFiltrar.Items.AddRange(filtros);
             
-            cmbStatus.SelectedIndex = 0;
+            cmbStatus.SelectedIndex = 1;
 
             CarregarTodosUsuarios();
         }
@@ -139,79 +139,6 @@ namespace MultApps.Windows
             btnDeletar.Enabled = false;
         }
 
-        private void CarregarTodosUsuarios()
-        {
-            var usuarioRepository = new UsuarioRepository();
-            var listaDeUsuarios = usuarioRepository.ListarTodosUsuarios;
-            cmbFiltrar.SelectedIndex = 0;
-
-            if (cmbFiltrar.SelectedIndex == 0)
-            {
-                
-            }
-
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.Columns.Clear();
-
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "Id",
-                HeaderText = "Id",
-                MinimumWidth = 30,
-
-            });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "Nome",
-                HeaderText = "Nome completo",
-                MinimumWidth = 200,
-
-            });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "Cpf",
-                HeaderText = "CPF",
-                MinimumWidth = 150,
-            });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "Email",
-                HeaderText = "Email",
-                MinimumWidth = 200,
-            });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "DataCadastro",
-                HeaderText = "Data de cadastro",
-                DefaultCellStyle = new DataGridViewCellStyle { Format = "dd/MM/yyyy HH:MM" },
-                MinimumWidth = 150
-
-            });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "DataUltimoAcesso",
-                HeaderText = "Ultimo acesso",
-                DefaultCellStyle = new DataGridViewCellStyle { Format = "dd/MM/yyyy HH:MM" },
-                MinimumWidth = 150
-
-            });
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "Status",
-                HeaderText = "Status",
-                DefaultCellStyle = new DataGridViewCellStyle
-                {
-
-                }
-            });
-
-            dataGridView1.DataSource = listaDeUsuarios;
-
-
-            dataGridView1.CellFormatting += dataGridView1_CellFormatting;
-
-        }
-
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dataGridView1.Columns[e.ColumnIndex].DataPropertyName == "Status")
@@ -267,6 +194,30 @@ namespace MultApps.Windows
 
             btnCadastrar.Text = "Atualizar cadastro";
             btnDeletar.Enabled = true;
+        }
+
+        private void FrmCadastro_Load(object sender, EventArgs e)
+        {
+            CarregarTodosUsuarios();
+        }
+
+        private void CarregarTodosUsuarios()
+        {
+            var usuarioRepository = new UsuarioRepository();
+
+            var listaUsuario = usuarioRepository.ListarUsuarios();
+            dataGridView1.DataSource = listaUsuario;
+        }
+
+        private void LimparCampos()
+        {
+            txtCpf.Text = string.Empty;
+            txtNome.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtSenha.Text = string.Empty;
+            cmbStatus.SelectedIndex = 1;
+            txtDataCadastro.Text = string.Empty;
+            txtUltimoAcesso.Text = string.Empty;
         }
     }
 }

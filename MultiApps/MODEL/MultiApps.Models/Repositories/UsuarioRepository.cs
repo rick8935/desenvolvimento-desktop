@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using MultiApps.Models.Entidades;
+using MultiApps.Models.Enum;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -107,12 +108,48 @@ namespace MultiApps.Models.Repositories
         {
             using (IDbConnection db = new MySqlConnection(ConnectionString))
             {
-                var comandoSql = "SELECT COUNT * FROM usuario WHERE email = @Email";
+                var comandoSql = "SELECT COUNT(*) FROM usuario WHERE email = @Email";
                 var parametros = new DynamicParameters();
                 parametros.Add("@Email", email);
                 var resultado = db.ExecuteScalar<int>(comandoSql, parametros);
                 return resultado > 0;
             }
         }
+
+        public DataTable ListarUsuarios()
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandoSql = @"SELECT id AS Id, 
+                                          nome AS Nome, 
+                                          cpf AS Cpf, 
+                                          email AS Email, 
+                                          data_cadastro AS DataCadastro,
+                                          data_alteracao AS DataAlteracao,
+                                          data_ultimoacesso AS DataUltimoAcesso     
+                                   FROM usuario";
+                var usuarios = db.Query<Usuario>(comandoSql).ToList();
+                // Converte a lista de usuários para um DataTable
+                var dataTable = new DataTable();
+                dataTable.Columns.Add("Id", typeof(int));
+                dataTable.Columns.Add("Nome", typeof(string));
+                dataTable.Columns.Add("Cpf", typeof(string));
+                dataTable.Columns.Add("Email", typeof(string));
+                
+
+                foreach (var usuario in usuarios)
+                {
+                    dataTable.Rows.Add(usuario.Id,
+                        usuario.Nome,
+                        usuario.Cpf,
+                        usuario.Email
+                        );
+                }
+                return dataTable;
+            }
+        }
+
+
+
     }
 }
