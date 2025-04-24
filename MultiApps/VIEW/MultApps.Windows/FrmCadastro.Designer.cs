@@ -110,6 +110,7 @@
             this.cmbFiltrar.Name = "cmbFiltrar";
             this.cmbFiltrar.Size = new System.Drawing.Size(169, 21);
             this.cmbFiltrar.TabIndex = 6;
+            this.cmbFiltrar.SelectedIndexChanged += new System.EventHandler(this.cmbFiltrar_SelectedIndexChanged);
             // 
             // lblId
             // 

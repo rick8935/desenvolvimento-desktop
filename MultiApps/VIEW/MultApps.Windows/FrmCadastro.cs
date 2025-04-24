@@ -1,4 +1,5 @@
 ﻿using MultApps.Models.Repositories;
+using MultApps.Models.Services;
 using MultApps.Windows;
 using MultiApps.Models.Entidades;
 using MultiApps.Models.Enum;
@@ -26,6 +27,7 @@ namespace MultApps.Windows
             cmbFiltrar.Items.AddRange(filtros);
             
             cmbStatus.SelectedIndex = 1;
+            cmbFiltrar.SelectedIndex = 0;
 
             CarregarTodosUsuarios();
         }
@@ -38,11 +40,12 @@ namespace MultApps.Windows
                 {
                     return;
                 }
+
                 var usuario = new Usuario();
                 usuario.Nome = txtNome.Text;
                 usuario.Cpf = txtCpf.Text;
                 usuario.Email = txtEmail.Text;
-                usuario.Senha = txtSenha.Text;
+                usuario.Senha = CriptografiaService.Criptografar(txtSenha.Text);
                 usuario.Status = (StatusEnum)cmbStatus.SelectedIndex;
 
                 var usuarioRepository = new UsuarioRepository();
@@ -51,6 +54,7 @@ namespace MultApps.Windows
                 if(emailExistente)
                 {
                     MessageBox.Show($"O email {usuario.Email} já está cadastrado.");
+                    return;
                 }
 
                 if (string.IsNullOrEmpty(txtId.Text))
@@ -218,6 +222,26 @@ namespace MultApps.Windows
             cmbStatus.SelectedIndex = 1;
             txtDataCadastro.Text = string.Empty;
             txtUltimoAcesso.Text = string.Empty;
+        }
+
+        private void cmbFiltrar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var usuarioRepository = new UsuarioRepository();
+            switch (cmbFiltrar.SelectedIndex)
+            {
+                case 0:
+                    CarregarTodosUsuarios();
+                    break;
+
+                case 1:
+                    var usuariosAtivos = usuarioRepository.ListarUsuariosPorStatus(1);
+                    dataGridView1.DataSource = usuariosAtivos;
+                    break;
+                case 2:
+                    var usuariosInativos = usuarioRepository.ListarUsuariosPorStatus(0);
+                    dataGridView1.DataSource = usuariosInativos;
+                    break;
+            }   
         }
     }
 }
