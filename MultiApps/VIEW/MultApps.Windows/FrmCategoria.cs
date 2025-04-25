@@ -34,7 +34,7 @@ namespace MultApps.Windows
                 var resultado = categoriaRepository.CadastrarCategoria(categoria);
                 if (resultado)
                 {
-                    MessageBox.Show("Categoria cadastra com sucesso");
+                    MessageBox.Show("Categoria cadastrada com sucesso");
                 }
                 else
                 {

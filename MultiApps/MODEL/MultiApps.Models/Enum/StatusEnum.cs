@@ -10,6 +10,7 @@ namespace MultiApps.Models.Enum
     {
         Inativo = 0,
         Ativo = 1,
-        Excluido = 2
+        Excluido = 2,
+        Todos = 3
     }
 }

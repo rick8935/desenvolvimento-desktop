@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MultiApps.Models.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace MultApps.Windows
 {
     public partial class Principal : Form
     {
-        public Principal()
+        public Usuario UsuarioLogado { get; set; }
+        public Principal(Usuario usuario)
         {
             InitializeComponent();
+            UsuarioLogado = usuario;
         }
 
         private void menuCalculadoraImc_Click(object sender, EventArgs e)
@@ -42,6 +45,11 @@ namespace MultApps.Windows
             var Form = new FrmCarteirinha();
             Form.MdiParent = this;
             Form.Show();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            statusLabelUsuario.Text = $"Usuário: {UsuarioLogado}";
         }
     }
 }
