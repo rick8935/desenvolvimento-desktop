@@ -118,6 +118,7 @@
             this.btnNovoProduto.TabIndex = 6;
             this.btnNovoProduto.Text = "+ Novo Produto";
             this.btnNovoProduto.UseVisualStyleBackColor = false;
+            this.btnNovoProduto.Click += new System.EventHandler(this.btnNovoProduto_Click);
             // 
             // btnAtualizarGrid
             // 
@@ -129,6 +130,7 @@
             this.btnAtualizarGrid.TabIndex = 7;
             this.btnAtualizarGrid.Text = "Atualizar Grid";
             this.btnAtualizarGrid.UseVisualStyleBackColor = false;
+            this.btnAtualizarGrid.Click += new System.EventHandler(this.btnAtualizarGrid_Click);
             // 
             // lbl
             // 
@@ -303,6 +305,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(850, 147);
             this.dataGridView1.TabIndex = 33;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick_1);
             // 
             // txtId
             // 

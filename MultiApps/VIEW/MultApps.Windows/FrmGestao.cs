@@ -18,8 +18,10 @@ namespace MultApps.Windows
     {
         public FrmGestao()
         {
+            var produto = new GestaoProdutos();
+
             InitializeComponent();
-            CarregarProdutos();
+
             var status = new[] { "inativo", "ativo" };
             var filtros = new[] { "todos", "ativos", "inativos" };
             cmbStatus.Items.AddRange(status);
@@ -27,6 +29,8 @@ namespace MultApps.Windows
 
             cmbStatus.SelectedIndex = 1;
             cmbFiltro.SelectedIndex = 0;
+
+            CarregarProdutos();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -49,6 +53,35 @@ namespace MultApps.Windows
                 produto.Status = (StatusEnum)cmbStatus.SelectedIndex;
 
                 var produtoRepository = new ProdutoRepository();
+
+                if (string.IsNullOrEmpty(txtId.Text))
+                {
+                    var resultado = produtoRepository.AdicionarProduto(produto);
+                    if (resultado)
+                    {
+                        MessageBox.Show("Produto cadastrado com sucesso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao salvar produto");
+                    }
+                }
+                else
+                {
+                    produto.Id = int.Parse(txtId.Text);
+                    var resultado = produtoRepository.AtualizarProduto(produto);
+
+                    if (resultado)
+                    {
+                        MessageBox.Show("Produto atualizado com sucesso");
+                        btnSalvar.Text = "Salvar";
+                        CarregarProdutos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao atualizar produto");
+                    }
+                }
             }
             catch (Exception exception)
             {
@@ -129,40 +162,6 @@ namespace MultApps.Windows
             txtId.Text = string.Empty;
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-            {
-                MessageBox.Show($"Houve um erro ao clicar duas vezes sobre o Grid");
-                return;
-            }
-
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-
-            var produtoId = (int)row.Cells[0].Value;
-
-            var produtoRepository = new ProdutoRepository();
-            var produto = produtoRepository.ObterProduto(produtoId);
-
-            if (produto == null)
-            {
-                MessageBox.Show($"Usuario: #{produtoId} não encontrado");
-                return;
-            }
-
-            txtId.Text = produtoId.ToString();
-            txtNomeProduto.Text = produto.Nome;
-            txtCategoria.Text = produto.Categoria;
-            txtLinkImagem.Text = produto.ImagemLink;
-            txtEstoque.Text = produto.Estoque;
-            txtPreco.Text = produto.Preco;
-            txtDescricaoProduto.Text = produto.Descricao;
-            cmbStatus.SelectedIndex = (int)produto.Status;
-
-            btnSalvar.Text = "Atualizar produto";
-            btnExcluir.Enabled = true;
-        }
-
         private void CarregarProdutos()
         {
             var produtoRepository = new ProdutoRepository();
@@ -205,17 +204,65 @@ namespace MultApps.Windows
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             var produtoRepository = new ProdutoRepository();
-            var categoriaSelecionada = cmbCategoria.SelectedIndex.ToString();
+            var categoriaSelecionada = cmbCategoria.Text;
 
             dataGridView1.DataSource = produtoRepository.ListarProdutosPorCategoria(categoriaSelecionada);
         }
 
         private void FrmGestao_Load(object sender, EventArgs e)
         {
-            var produto = new GestaoProdutos();
+            var produtoRepository = new ProdutoRepository();
+            var categorias = produtoRepository.ListarCategorias();
 
-            var categoriaFiltro = new[] { produto.Categoria };
-            cmbCategoria.Items.AddRange(categoriaFiltro);
+            foreach (var categoria in categorias)
+            {
+                cmbCategoria.Items.Add(categoria);
+            }
         }
+
+        private void dataGridView1_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                MessageBox.Show($"Houve um erro ao clicar duas vezes sobre o Grid");
+                return;
+            }
+
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+            var produtoId = (int)row.Cells[0].Value;
+
+            var produtoRepository = new ProdutoRepository();
+            var produto = produtoRepository.ObterProduto(produtoId);
+
+            if (produto == null)
+            {
+                MessageBox.Show($"Usuario: #{produtoId} não encontrado");
+                return;
+            }
+
+            txtId.Text = produtoId.ToString();
+            txtNomeProduto.Text = produto.Nome;
+            txtCategoria.Text = produto.Categoria;
+            txtLinkImagem.Text = produto.ImagemLink;
+            txtEstoque.Text = produto.Estoque;
+            txtPreco.Text = produto.Preco;
+            txtDescricaoProduto.Text = produto.Descricao;
+            cmbStatus.SelectedIndex = (int)produto.Status;
+
+            btnSalvar.Text = "Atualizar produto";
+            btnExcluir.Enabled = true;
+        }
+
+        private void btnNovoProduto_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void btnAtualizarGrid_Click(object sender, EventArgs e)
+        {
+            CarregarProdutos();
+        }
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using MultiApps.Models.Entidades;
 using MultiApps.Models.Entidades.Abstract;
+using MultiApps.Models.Enum;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -27,8 +28,8 @@ namespace MultiApps.Models.Repositories
                 parametros.Add("@Nome", produto.Nome);
                 parametros.Add("@Categoria", produto.Categoria);
                 parametros.Add("@Preco", produto.Preco);
-                parametros.Add("@QuantidadeEstoque", produto.Estoque);
-                parametros.Add("@Imagem", produto.ImagemLink);
+                parametros.Add("@Estoque", produto.Estoque);
+                parametros.Add("@ImagemLink", produto.ImagemLink);
                 parametros.Add("@Descricao", produto.Descricao);
                 parametros.Add("@Status", produto.Status);
 
@@ -46,11 +47,12 @@ namespace MultiApps.Models.Repositories
                                    WHERE id = @Id";
 
                 var parametros = new DynamicParameters();
+                parametros.Add("@Id", produto.Id);
                 parametros.Add("@Nome", produto.Nome);
                 parametros.Add("@Categoria", produto.Categoria);
                 parametros.Add("@Preco", produto.Preco);
-                parametros.Add("@QuantidadeEstoque", produto.Estoque);
-                parametros.Add("@Imagem", produto.ImagemLink);
+                parametros.Add("@Estoque", produto.Estoque);
+                parametros.Add("@ImagemLink", produto.ImagemLink);
                 parametros.Add("@Descricao", produto.Descricao);
                 parametros.Add("@Status", produto.Status);
 
@@ -90,13 +92,14 @@ namespace MultiApps.Models.Repositories
         {
             using IDbConnection db = new MySqlConnection(ConnectionString);
             {
-                var comandoSql = @"SELECT id, nome, categoria, preco, quantidade_estoque AS Estoque, imagem, descricao, status AS Status FROM produto";
+                var comandoSql = @"SELECT id, nome, categoria, preco, quantidade_estoque AS Estoque, imagem AS ImagemLink, descricao, status AS Status FROM produto";
                 var produtos = db.Query<GestaoProdutos>(comandoSql).ToList();
 
                 var dataTable = new DataTable();
                 dataTable.Columns.Add("Id", typeof(int));
                 dataTable.Columns.Add("Nome", typeof(string));
                 dataTable.Columns.Add("Categoria", typeof(string));
+                dataTable.Columns.Add("Preço", typeof(string));
                 dataTable.Columns.Add("Estoque", typeof(string));
                 dataTable.Columns.Add("Imagem", typeof(string));
                 dataTable.Columns.Add("Descrição", typeof(string));
@@ -106,6 +109,7 @@ namespace MultiApps.Models.Repositories
                     dataTable.Rows.Add(produto.Id,
                         produto.Nome,
                         produto.Categoria,
+                        produto.Preco,
                         produto.Estoque,
                         produto.ImagemLink,
                         produto.Descricao);
@@ -118,7 +122,9 @@ namespace MultiApps.Models.Repositories
         {
             using IDbConnection db = new MySqlConnection(ConnectionString);
             {
-                var comandoSql = @"SELECT id, nome, categoria, preco, quantidade_estoque AS Estoque, imagem, descricao, status AS Status FROM produto";
+                var comandoSql = @"SELECT id, nome, categoria, preco, quantidade_estoque AS Estoque, imagem, descricao
+                FROM produto WHERE status = @Status";
+
                 var parametros = new DynamicParameters();
                 parametros.Add("@Status", status);
                 var produtos = db.Query<GestaoProdutos>(comandoSql, parametros).ToList();
@@ -127,6 +133,7 @@ namespace MultiApps.Models.Repositories
                 dataTable.Columns.Add("Id", typeof(int));
                 dataTable.Columns.Add("Nome", typeof(string));
                 dataTable.Columns.Add("Categoria", typeof(string));
+                dataTable.Columns.Add("Preço", typeof(string));
                 dataTable.Columns.Add("Estoque", typeof(string));
                 dataTable.Columns.Add("Imagem", typeof(string));
                 dataTable.Columns.Add("Descrição", typeof(string));
@@ -136,6 +143,7 @@ namespace MultiApps.Models.Repositories
                     dataTable.Rows.Add(produto.Id,
                         produto.Nome,
                         produto.Categoria,
+                        produto.Preco,
                         produto.Estoque,
                         produto.ImagemLink,
                         produto.Descricao);
@@ -157,6 +165,7 @@ namespace MultiApps.Models.Repositories
                 dataTable.Columns.Add("Id", typeof(int));
                 dataTable.Columns.Add("Nome", typeof(string));
                 dataTable.Columns.Add("Categoria", typeof(string));
+                dataTable.Columns.Add("Preço", typeof(string));
                 dataTable.Columns.Add("Estoque", typeof(string));
                 dataTable.Columns.Add("Imagem", typeof(string));
                 dataTable.Columns.Add("Descrição", typeof(string));
@@ -166,11 +175,20 @@ namespace MultiApps.Models.Repositories
                     dataTable.Rows.Add(produto.Id,
                         produto.Nome,
                         produto.Categoria,
+                        produto.Preco,
                         produto.Estoque,
                         produto.ImagemLink,
                         produto.Descricao);
                 }
                 return dataTable;
+            }
+        }
+
+        public List<string> ListarCategorias()
+        {
+            using IDbConnection db = new MySqlConnection(ConnectionString);
+            {
+                return db.Query<string>("SELECT DISTINCT categoria FROM produto").ToList();
             }
         }
     }

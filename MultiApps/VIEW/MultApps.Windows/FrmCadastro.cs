@@ -78,6 +78,7 @@ namespace MultApps.Windows
                     {
                         MessageBox.Show("Categoria atualizada com sucesso");
                         btnCadastrar.Text = "Cadastrar";
+
                     }
                     else
                     {
